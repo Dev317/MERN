@@ -28,14 +28,16 @@ const App = () => {
                 <img className={classes.image} src={memories} alt='memories' height='60'/>
             </AppBar>
             <Grow in>
-                <Grid container justifyContent='space-between' alignItems='stretch' spacing={3}>
-                    <Grid item xs={12} sm={7}>
-                        <Posts setCurrentId={setCurrentId}/>
+                <Container>
+                    <Grid className={classes.mainContainer} container justifyContent='space-between' alignItems='stretch' spacing={3}>
+                        <Grid item xs={12} sm={7}>
+                            <Posts setCurrentId={setCurrentId}/>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                            <Form currentId={currentId} setCurrentId={setCurrentId}/>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={4}>
-                        <Form currentId={currentId} setCurrentId={setCurrentId}/>
-                    </Grid>
-                </Grid>
+                </Container>
             </Grow>
         </Container>
     )
